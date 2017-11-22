@@ -1,5 +1,6 @@
 package io.zipcoder.casino;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Player {
@@ -26,6 +27,11 @@ public class Player {
     public Player(String name) {
         this();
         this.name = name;
+    }
+
+    public void setMoney(Double newAmount) {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        this.money = Double.valueOf(twoDForm.format(newAmount));
     }
 
     public String getName() {

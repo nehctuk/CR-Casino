@@ -63,12 +63,14 @@ public class GoFishTest {
         aGoFishGame.displayHand(aPlayer);
     }
 
+    @Test
     public void checkForCardInHandTest() {
 
 
 
     }
 
+    @Test
     public void returnFaceValue() {
 
     }

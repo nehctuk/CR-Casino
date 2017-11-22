@@ -44,9 +44,14 @@ public class WelcomeMenu extends Menu {
 
     public void createNewPlayer() {
         String playerName = Console.getStringInput("Please enter a username.");
-        Double amountOfMoney = Console.getDoubleInput("Please enter the amount of money you have.");
+        Double amount = Console.getDoubleInput("Please enter the amount of money you have.");
 
-        Player aPlayer = new Player(playerName, amountOfMoney);
+        while (amount <= 0) {
+            Console.print("Please make sure you have more than zero dollars!");
+            amount = Console.getDoubleInput("Please enter the amount of money you have.");
+        }
+
+        Player aPlayer = new Player(playerName, amount);
 
         PlayerWarehouse.addPlayer(aPlayer);
         Console.print("\nYour account has been created!\n");
